@@ -7,24 +7,18 @@
             <div class="box">
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('registrar') }}" class="mb-5"
-                        enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('add-bombero') }}" class="mb-5">
                         @csrf
-
                         <div class="row">
-
                             <div class="col-md-3 form-group">
                                 <label for="codigo" class="col-form-label">Código:</label>
-                                <input id="codigo" name="codigo" value="{{ old('codigo') }}" type="text"
-                                    class="form-control @error('codigo') is-invalid @enderror" autocomplete="codigo">
-
+                                <input id="codigo" name="codigo" value="{{ old('codigo') }}" type="text" class="form-control @error('codigo') is-invalid @enderror" autocomplete="codigo">
                                 @error('codigo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-
 
                             <div class="col-md-3 form-group">
                                 <label for="user_name" class="col-form-label">Nombre de Usuario:</label>
@@ -39,10 +33,8 @@
                                 @enderror
                             </div>
 
-
-
                             <div class="col-md-3 form-group">
-                                <label for="name" class="col-form-label">Nombres:</label>
+                                <label for="name" class="col-form-label">Nombre:</label>
                                 <input id="name" name="name" value="{{ old('name') }}" type="text"
                                     class="form-control @error('name') is-invalid @enderror" required autocomplete="name">
 
@@ -210,7 +202,7 @@
 
                             <div class="col-md-12 form-group">
                                <input type="submit" class="btn btn-danger form-control"
-                                value="{{ __('Registrar un nuevo elemento') }}">
+                                value="{{ __('Registrar un nuevo Bombero') }}">
                             </div>
 
 

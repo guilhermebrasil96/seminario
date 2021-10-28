@@ -21,7 +21,6 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
 </head>
 
@@ -53,14 +52,14 @@
                         <span>Nuevo elemento</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('bomberos') }}">
                         <i class="fas fa-fw fa-hard-hat"></i>
                         <span>Bomberos</span></a>
                 </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider">
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('roles') }}">
                         <i class="fas fa-fw fa-user-circle"></i>
                         <span>Roles</span></a>
                 </li>
