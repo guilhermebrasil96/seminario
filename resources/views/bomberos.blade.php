@@ -32,6 +32,7 @@
             <th>DPI</th>
             <th>Telefono 1</th>
             <th>Telefono 2</th>
+            <th>Rol</th>
         </tr>
     </thead>
     <tbody>
@@ -50,6 +51,7 @@
             <td>{{ $bombero->dpi }}</td>
             <td>{{ $bombero->telefono1 }}</td>
             <td>{{ $bombero->telefono2 }}</td>
+            <td>{{ $bombero->rol }}</td>
             <td>
                 <a href="/bomberos/edit/{{ $bombero->id }}"><i class="btn btn-warning fas fa-edit"></i></a> 
             </td>

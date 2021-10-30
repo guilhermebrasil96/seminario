@@ -30,6 +30,7 @@ class BomsController extends Controller
         $boms->telefono1 = $_POST['tel1'];
         $boms->telefono2 = $_POST['tel2'];
         $boms->password = $_POST['password'];
+        $boms->rol = $_POST['rol'];
 
         $boms->save();
 
@@ -39,9 +40,11 @@ class BomsController extends Controller
 
     function registrar(){
 
-        return view('registrar');
+        $rol = DB::select('select * from roles');
+
+        return view('registrar')->with('roles', $rol);
     }
-    
+
     public function list() {
 
         $rs = $this->index();
@@ -85,6 +88,7 @@ class BomsController extends Controller
         $telefono1 = $_POST['tel1'];
         $telefono2 = $_POST['tel2'];
         $contrasena = $_POST['password'];
+        $rol = $_POST['rol'];
 
         $update = DB::update('update boms set 
 
@@ -98,7 +102,8 @@ class BomsController extends Controller
                 dpi= "' . $dpi . '",
                 telefono1= "' . $telefono1 . '",
                 telefono2= "' . $telefono2 . '",
-                password= "' . $contrasena . '"
+                password= "' . $contrasena . '",
+                rol= "' . $rol . '"
 
                 where id=' . $boms);
 
@@ -112,9 +117,10 @@ class BomsController extends Controller
 
     public function edit($boms) {
 
+        $rol = DB::select('select * from roles');
         $bombero = DB::select('select * from boms where id =' . $boms);
 
-        return view('/editar-bombero')->with('bomberos', $bombero);
+        return view('/editar-bombero')->with('bomberos', $bombero)->with('roles', $rol);
 
     }
 

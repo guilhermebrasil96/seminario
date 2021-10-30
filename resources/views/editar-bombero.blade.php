@@ -96,12 +96,12 @@
 
 {{-- esta parte debe habilitarse para ingresar un rol --}}
 {{-- los roles son 1) bombero 2) administrador y deberian ser implementados con spatie  --}}
-            {{-- <div class="col-md-3 form-group">
+            <div class="col-md-3 form-group">
                 <label for="rol" class="col-form-label">Rol:</label>
                 <select required name="rol" id="rol"
                     class="form-control @error('rol') is-invalid @enderror">
                     @foreach($roles as $rol)
-                    <option value="{{ $rol->id }}" @if (old('rol') == $rol->id) {{ 'selected' }} @endif>{{ $rol->name }}</option>
+                    <option value="{{ $rol->name }}"  @if ($bombero->rol == $rol->name) {{ 'selected' }} @endif> {{ $rol->name }}</option>
                     @endforeach
                 </select>
 
@@ -110,7 +110,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-            </div> --}}
+            </div>
 
 
 

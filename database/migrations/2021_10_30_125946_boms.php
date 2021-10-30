@@ -26,6 +26,7 @@ class Boms extends Migration
             $table->string('telefono1');
             $table->string('telefono2');
             $table->string('password');
+            $table->string('rol');
             $table->timestamps();
         });
     }
