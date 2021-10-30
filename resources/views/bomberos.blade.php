@@ -50,9 +50,15 @@
             <td>{{ $bombero->dpi }}</td>
             <td>{{ $bombero->telefono1 }}</td>
             <td>{{ $bombero->telefono2 }}</td>
-            <td><a href="/bombero/editar?bombero={{ $bombero->id }}"><i class="btn btn-warning fas fa-edit"></i></a> </td>
-            <td><a href="/bombero/delete?bombero={{ $bombero->id }}"><i class="btn btn-danger fas fa-trash-alt"></i></a>
-
+            <td>
+                <a href="/bomberos/edit/{{ $bombero->id }}"><i class="btn btn-warning fas fa-edit"></i></a> 
+            </td>
+            <td>
+                <form action="{{ url('bomberos', $bombero->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"><i class="btn btn-danger fas fa-trash-alt"></i></button>
+                </form>
         </tr>
 
         @endforeach

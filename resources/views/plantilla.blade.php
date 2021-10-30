@@ -52,7 +52,7 @@
                         <span>Nuevo elemento</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('bomberos') }}">
+                    <a class="nav-link" href="/bomberos/list">
                         <i class="fas fa-fw fa-hard-hat"></i>
                         <span>Bomberos</span></a>
                 </li>

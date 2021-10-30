@@ -4,8 +4,9 @@
 
 <div class="col-12">
     @foreach($bomberos as $bombero)
-    <form method="post" action="/bombero/edit?bombero={{ $bombero->id }}">
+    <form method="post" action="/bomberos/{{ $bombero->id }}">
         @csrf
+        @method('PATCH')
         <div class="row">
             <div class="col-md-3 form-group">
                 <label for="codigo" class="col-form-label">Código:</label>
@@ -88,7 +89,7 @@
 
             <div class="col-md-3 form-group">
                 <label for="password" class="col-form-label">Nueva Contraseña:</label>
-                <input id="password" name="password" type="password" value="{{ $bombero->contrasena }}"
+                <input id="password" name="password" type="password" value="{{ $bombero->password }}"
                     class="form-control">
 
             </div>
