@@ -25,9 +25,7 @@ class Boms extends Migration
             $table->string('dpi');
             $table->string('telefono1');
             $table->string('telefono2');
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -37,6 +37,11 @@ class BomsController extends Controller
 
     }
 
+    function registrar(){
+
+        return view('registrar');
+    }
+    
     public function list() {
 
         $rs = $this->index();

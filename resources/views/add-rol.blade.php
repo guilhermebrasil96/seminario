@@ -7,7 +7,7 @@
             <div class="box">
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('registrar-rol') }}" class="mb-5">
+                    <form method="POST" action="{{ route('new-rol') }}" class="mb-5">
                         @csrf
                         <div class="row">
                            
@@ -22,7 +22,18 @@
                                 value="{{ __('Registrar un nuevo Rol') }}">
                             </div>
 
+                            @if (\Session::has('success'))
+                            <div class="alert alert-success">
+                                <span>{!! \Session::get('success') !!}</span>
+                            </div>
+                            @endif
 
+                            @if (\Session::has('error'))
+                            <div class="alert alert-danger">
+                                <span>{!! \Session::get('error') !!}</span>
+                            </div>
+                            @endif
+                            
                         </div>
                     </form>
                 </div>

@@ -4,8 +4,9 @@
 
 <div class="col-12">
     @foreach($roles as $rol)
-    <form method="post" action="/rol/edit?rol={{ $rol->id }}">
+    <form method="post" action="/roles/{{ $rol->id }}">
         @csrf
+        @method('PATCH')
         <div class="row">
 
             <div class="col-md-3 form-group">

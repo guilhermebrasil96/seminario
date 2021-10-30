@@ -32,8 +32,14 @@
         <tr>
             <td>{{ $rol->id }}</td>
             <td>{{ $rol->name }}</td>
-            <td><a href="/rol/editar?rol={{ $rol->id }}"><i class="btn btn-warning fas fa-edit"></i></a> </td>
-            <td><a href="/rol/delete?rol={{ $rol->id }}"><i class="btn btn-danger fas fa-trash-alt"></i></a>
+            <td><a href="/roles/edit/{{ $rol->id }}"><i class="btn btn-warning fas fa-edit"></i></a> </td>
+            <td>
+                <form action="{{ url('roles', $rol->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"><i class="btn btn-danger fas fa-trash-alt"></i></button>
+                </form>
+            </td>
 
         </tr>
 

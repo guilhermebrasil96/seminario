@@ -59,7 +59,7 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('roles') }}">
+                    <a class="nav-link" href="/roles/list">
                         <i class="fas fa-fw fa-user-circle"></i>
                         <span>Roles</span></a>
                 </li>
